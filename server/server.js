@@ -60,7 +60,8 @@ server.get('/api/v1/products', async (req, res) => {
 })
 
 server.get('/api/v1/rates', async (req, res) => {
-  const { data: rates } = await axios('https://api.exchangeratesapi.io/latest?symbols=USD,CAD')
+  // const { data: rates } = await axios('https://api.exchangeratesapi.io/latest?symbols=USD,CAD')
+  const { data: rates } = await axios('http://api.exchangeratesapi.io/v1/latest?access_key=5a40240bb7531e50d1d5177a6dc34813')
   res.json(rates)
 })
 

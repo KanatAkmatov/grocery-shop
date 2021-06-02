@@ -9,6 +9,7 @@ const Catalog = () => {
   const selection = useSelector((s) => s.shop.selection)
   const rates = useSelector((s) => s.shop.rates)
   const base = useSelector((s) => s.shop.base)
+  console.log(rates)
   const currency = {
     USD: '$',
     EUR: '€',
@@ -28,7 +29,7 @@ const Catalog = () => {
               <img src={el.image} alt="" className="inline-block" />
               <h4>{el.title}</h4>
               <p>
-                {(el.price * (rates[base] || 1)).toFixed(2)} {currency[base]}
+                {(el.price * rates[base]).toFixed(2)} {currency[base]}
               </p>
               <div className="selected-btn flex justify-center my-6">
                 <button
